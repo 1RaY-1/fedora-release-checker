@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 """
-Program that checks for new Fedora Workstation release
+Program that checks if there is a new Fedora Workstation release
 And notifies user about new release by sending a gmail
 """
 
