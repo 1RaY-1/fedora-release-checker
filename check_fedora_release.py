@@ -108,7 +108,7 @@ PS: Now you'll have to change it in {sys.argv[0]}"""
         
 
 if __name__ == '__main__':
-    # latest fedora release for the moment (for the moment it's 34), your gmail account, your gmail password for apps, check delay
+    # enter currently latest fedora release (at the moment it's 34), your gmail account, your gmail password for apps, check delay
     fn = FedoraNotifier("34", "YOUR_GMAIL", "YOUR_GMAIL_PASSWORD_FOR_APPS", check_delay)
 
     fn.main()
