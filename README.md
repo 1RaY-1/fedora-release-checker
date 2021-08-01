@@ -1,6 +1,3 @@
-# About
-Program that checks if there is a new Fedora Workstation release and notifies user about new release by sending a gmail
-
 # Setup
 * Enable less secure apps to access Gmail
 * Turn on 2-Step Verification
