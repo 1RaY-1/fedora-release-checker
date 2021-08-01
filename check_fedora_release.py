@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
 """
-Program that checks if there is a new Fedora Workstation release
-And notifies user about new release by sending a gmail
+Program that checks for new Fedora Workstation release
+And notifies user about new release by sending an email
 """
 
 import requests
@@ -11,7 +11,7 @@ from time import sleep
 import sys
 import smtplib
 
-class FedoraNotifier:
+class FedoraChecker:
 
     def __init__(self, v, target_gmail, gmail_passwd, delay):
         self.v = v
@@ -101,14 +101,11 @@ PS: Now you'll have to change it in {sys.argv[0]}"""
         except Exception as e:
             self.ifprint_logs("error", "\nAn exception occured:\n" )
             sys.exit()
-        """
-        while True:
-            self.check()
-            sleep(self.delay)"""
         
 
 if __name__ == '__main__':
-    # enter currently latest fedora release (at the moment it's 34), your gmail account, your gmail password for apps, check delay
-    fn = FedoraNotifier("34", "YOUR_GMAIL", "YOUR_GMAIL_PASSWORD_FOR_APPS", check_delay)
+    # latest fedora release for the moment (for the moment it's 34), your gmail account, your gmail password for apps, check delay
+    fn = FedoraChecker("34", "YOUR_GMAIL", "YOUR_GMAIL_PASSWORD_FOR_APPS", check_delay)
 
     fn.main()
+
