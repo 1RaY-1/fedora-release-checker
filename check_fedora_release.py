@@ -2,7 +2,7 @@
 
 """
 Program that checks for new Fedora Workstation release
-And notifies user about new release by sending an email
+And notifies user about the new release (if there is one) by sending an email
 """
 
 import requests
@@ -22,7 +22,7 @@ class FedoraChecker:
         # delay of checking in seconds
         self.delay  = delay
 
-        # set to False if will run this program in background, set to True if want to see logs
+        # set to False if gonna will run this program in background, set to True if wanna see logs in the command line
         self.print_logs = False
 
         # remove this from fedora release, to make clear release version
@@ -89,6 +89,7 @@ PS: Now you'll have to change it in {sys.argv[0]}"""
         if self.v != new_v:
             self.ifprint_logs("info", f"There is a new Fedora release: {new_v}")
             self.notify()
+            sys.exit()
         else:
             pass
 
@@ -104,8 +105,6 @@ PS: Now you'll have to change it in {sys.argv[0]}"""
         
 
 if __name__ == '__main__':
-    # latest fedora release for the moment (for the moment it's 34), your gmail account, your gmail password for apps, check delay
-    fn = FedoraChecker("34", "YOUR_GMAIL", "YOUR_GMAIL_PASSWORD_FOR_APPS", check_delay)
-
+    # latest fedora release for the moment (for the moment it's 38), your gmail account, your gmail password for apps, delay (in seconds)
+    fn = FedoraChecker( "38", "YOUR_GMAIL", "YOUR_GMAIL_PASSWORD_FOR_APPS", 3600 ) # <- 3600  is one hour
     fn.main()
-
