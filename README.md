@@ -1,5 +1,5 @@
 # What is it
-A Python that checks if there is a new Fedora Workstation release and notifies user about new release by sending an email 
+A Python that checks if there is a new Fedora Workstation (checks for version 39) release and notifies user about new release by sending an email 
 
 # Setup
 * Enable less secure apps to access Gmail
